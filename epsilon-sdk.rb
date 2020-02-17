@@ -11,6 +11,7 @@ class EpsilonSdk < Formula
   depends_on "libpng"
   depends_on "pkg-config"
   depends_on "python"
+  depends_on "libusb"
 
   def install
     bin.mkpath
