@@ -10,7 +10,7 @@ class EpsilonSdk < Formula
   depends_on "imagemagick"
   depends_on "libpng"
   depends_on "pkg-config"
-  depends_on "python@3.8"
+  depends_on "python@3.x"
   depends_on "libusb"
 
   resource "lz4" do
@@ -29,9 +29,13 @@ class EpsilonSdk < Formula
   end
 
   def install
-    resource("lz4").stage { system "python3", *Language::Python.setup_install_args(libexec/"vendor") }
-    resource("pypng").stage { system "python3", *Language::Python.setup_install_args(libexec/"vendor") }
-    resource("stringcase").stage { system "python3", *Language::Python.setup_install_args(libexec/"vendor") }
+    virtualenv_install_with_resources
     bin.mkpath
+  end
+
+  test do
+    system "python", "-c", "'import lz4'"
+    system "python", "-c", "'import png'"
+    system "python", "-c", "'import stringcase'"
   end
 end
