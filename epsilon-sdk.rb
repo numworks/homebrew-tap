@@ -18,8 +18,20 @@ class EpsilonSdk < Formula
     sha256 "081ef0a3b5941cb03127f314229a1c78bd70c9c220bb3f4dd80033e707feaa18"
   end
 
+  resource "pypng" do
+    url "https://files.pythonhosted.org/packages/ac/56/8b9d4ba9290bb6bd0b0824fd6f4ce8a852126f203f3edcef8b7abfbd8937/pypng-0.0.21-py3-none-any.whl"
+    sha256 "76f8a1539ec56451da7ab7121f12a361969fe0f2d48d703d198ce2a99d6c5afd"
+  end
+
+  resource "stringcase" do
+    url "https://files.pythonhosted.org/packages/f3/1f/1241aa3d66e8dc1612427b17885f5fcd9c9ee3079fc0d28e9a3aeeb36fa3/stringcase-1.2.0.tar.gz"
+    sha256 "48a06980661908efe8d9d34eab2b6c13aefa2163b3ced26972902e3bdfd87008"
+  end
+
   def install
     resource("lz4").stage { system "python3", *Language::Python.setup_install_args(libexec/"vendor") }
+    resource("pypng").stage { system "python3", *Language::Python.setup_install_args(libexec/"vendor") }
+    resource("stringcase").stage { system "python3", *Language::Python.setup_install_args(libexec/"vendor") }
     bin.mkpath
   end
 end
