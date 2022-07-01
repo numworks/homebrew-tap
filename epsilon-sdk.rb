@@ -10,7 +10,7 @@ class EpsilonSdk < Formula
   depends_on "imagemagick"
   depends_on "libpng"
   depends_on "pkg-config"
-  depends_on "python@3.8"
+  depends_on "python"
   depends_on "libusb"
 
   resource "lz4" do
@@ -29,6 +29,7 @@ class EpsilonSdk < Formula
   end
 
   def install
+    virtualenv_create(libexec, "python3")
     virtualenv_install_with_resources
     bin.mkpath
   end
