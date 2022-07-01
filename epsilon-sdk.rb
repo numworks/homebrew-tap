@@ -11,7 +11,7 @@ class EpsilonSdk < Formula
   depends_on "imagemagick"
   depends_on "libpng"
   depends_on "pkg-config"
-  depends_on "python"
+  depends_on "python@3.8"
   depends_on "libusb"
 
   resource "lz4" do
@@ -20,8 +20,8 @@ class EpsilonSdk < Formula
   end
 
   resource "pypng" do
-    url "https://files.pythonhosted.org/packages/ac/56/8b9d4ba9290bb6bd0b0824fd6f4ce8a852126f203f3edcef8b7abfbd8937/pypng-0.0.21-py3-none-any.whl"
-    sha256 "76f8a1539ec56451da7ab7121f12a361969fe0f2d48d703d198ce2a99d6c5afd"
+    url "https://github.com/drj11/pypng/archive/refs/tags/pypng-0.0.20.tar.gz"
+    sha256 "d008a1f1f79633937ed2aa1742c7c077359edce53764b8b247891056ddca913c"
   end
 
   resource "stringcase" do
