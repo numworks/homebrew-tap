@@ -10,7 +10,7 @@ class EpsilonSdk < Formula
   depends_on "imagemagick"
   depends_on "libpng"
   depends_on "pkg-config"
-  depends_on "python@3.x"
+  depends_on "python@3.8"
   depends_on "libusb"
 
   resource "lz4" do
