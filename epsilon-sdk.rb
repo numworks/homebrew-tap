@@ -1,4 +1,5 @@
 class EpsilonSdk < Formula
+  include Language::Python::Virtualenv
   desc "Epsilon SDK"
   homepage "https://www.numworks.com/resources/engineering/software/"
   url "file:///dev/null"
@@ -29,7 +30,6 @@ class EpsilonSdk < Formula
   end
 
   def install
-    virtualenv_create(libexec, "python3")
     virtualenv_install_with_resources
     bin.mkpath
   end
