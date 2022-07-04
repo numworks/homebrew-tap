@@ -20,7 +20,7 @@ class EpsilonSdk < Formula
 
   resource "pypng" do
     url "https://github.com/drj11/pypng/archive/refs/tags/pypng-0.0.21.tar.gz"
-    sha256 "d008a1f1f79633937ed2aa1742c7c077359edce53764b8b247891056ddca913c"
+    sha256 "0c9285db09c8e3b66f884a0448dc2ae78737e228f69bfe9dfde1faa1d4f1c945"
   end
 
   resource "stringcase" do
