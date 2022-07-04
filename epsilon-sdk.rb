@@ -1,5 +1,4 @@
 class EpsilonSdk < Formula
-  include Language::Python::Virtualenv
   desc "Epsilon SDK"
   homepage "https://www.numworks.com/resources/engineering/software/"
   url "file:///dev/null"
