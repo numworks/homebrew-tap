@@ -30,14 +30,12 @@ class EpsilonSdk < Formula
   end
 
   def install
-    # Install dependencies first
     ENV.prepend_create_path "PYTHONPATH", libexec/"vendor/lib/python3.8/site-packages"
     %w[lz4 pypng stringcase].each do |r|
       resource(r).stage do
         system "python3", *Language::Python.setup_install_args(libexec/"vendor")
       end
     end
-    # virtualenv_install_with_resources
     bin.mkpath
   end
 
