@@ -14,14 +14,14 @@ class EpsilonSdk < Formula
   depends_on "libusb"
 
   resource "lz4" do
-    url "https://files.pythonhosted.org/packages/d9/c5/080234f5b6b698f56339edf7715d9256eca4eb3d35b36893227c399e69f9/lz4-3.1.3.tar.gz"
-    sha256 "081ef0a3b5941cb03127f314229a1c78bd70c9c220bb3f4dd80033e707feaa18"
+    url "https://files.pythonhosted.org/packages/65/8d/4d913798e17735839c7666e81985bd230f739927d066890b511a78c542d8/lz4-4.0.2.tar.gz"
+    sha256 "083b7172c2938412ae37c3a090250bfdd9e4a6e855442594f86c3608ed12729b"
   end
 
   resource "pypng" do
-   url "https://files.pythonhosted.org/packages/bc/fb/f719f1ac965e2101aa6ea6f54ef8b40f8fbb033f6ad07c017663467f5147/pypng-0.0.20.tar.gz"
-   sha256 "1032833440c91bafee38a42c38c02d00431b24c42927feb3e63b104d8550170b"
- end
+    url "https://files.pythonhosted.org/packages/bc/fb/f719f1ac965e2101aa6ea6f54ef8b40f8fbb033f6ad07c017663467f5147/pypng-0.0.20.tar.gz"
+    sha256 "1032833440c91bafee38a42c38c02d00431b24c42927feb3e63b104d8550170b"
+  end
 
   resource "stringcase" do
     url "https://files.pythonhosted.org/packages/f3/1f/1241aa3d66e8dc1612427b17885f5fcd9c9ee3079fc0d28e9a3aeeb36fa3/stringcase-1.2.0.tar.gz"
