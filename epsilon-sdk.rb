@@ -29,11 +29,16 @@ class EpsilonSdk < Formula
   end
 
   def install
-    %w[lz4 pypng stringcase].each do |r|
-      resource(r).stage do
-        system "python3", *Language::Python.setup_install_args(libexec/"vendor")
+    site_packages = libexec/Language::Python.site_packages("python3")
+    ENV.prepend_create_path "PYTHONPATH", site_packages
+    resources.each do |r|
+      r.stage do
+        system "python3", *Language::Python.setup_install_args(libexec)
       end
     end
+    xy = Language::Python.major_minor_version "python3"
+    (lib/"python#{xy}/site-packages/homebrew-epsilon-sdk.pth").write "#{site_packages}\n"
+
     bin.mkpath
   end
 
