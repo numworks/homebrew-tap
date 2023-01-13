@@ -1,9 +1,15 @@
 class ArmNoneEabiGcc < Formula
   desc "GNU Arm Embedded Toolchain"
   homepage "https://developer.arm.com/tools-and-software/open-source-software/developer-tools/gnu-toolchain/gnu-rm"
-  url "https://github.com/numworks/homebrew-tap/releases/download/gcc-arm-2020-q4/gcc-arm-none-eabi-10-2020-q4-major-mac.tar.bz2"
-  version "10-2020q4"
-  sha256 "bed12de3565d4eb02e7b58be945376eaca79a8ae3ebb785ec7344e7e2db0bdc0"
+  on_intel do
+    url "https://github.com/numworks/homebrew-tap/releases/download/gcc-arm-2022-12-22/arm-gnu-toolchain-12.2.rel1-darwin-x86_64-arm-none-eabi.tar.xz"
+    sha256 "00c0eeb57ae92332f216151ac66df6ba17d2d3b306dac86f4006006f437b2902"
+  end
+  on_arm  do
+    url "https://github.com/numworks/homebrew-tap/releases/download/gcc-arm-2022-12-22/arm-gnu-toolchain-12.2.rel1-darwin-arm64-arm-none-eabi.tar.xz"
+    sha256 "21a9e875250bcb0db8df4cb23dd43c94c00a1d3b98ecba9cdd6ed51586b12248"
+  end
+  version "2022.12.22"
 
   def install
     prefix.install Dir.glob("*")
